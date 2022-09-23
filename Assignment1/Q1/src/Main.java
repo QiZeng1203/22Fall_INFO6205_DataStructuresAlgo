@@ -6,26 +6,32 @@ public class Main {
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
 
-        removeElements(head, 2);
+        rotateRight(head, 2);
         printList(head);
     }
-    public static ListNode removeElements(ListNode head, int val) {
-        if (head == null) {
-            return null;
-        }
-        ListNode dummy = new ListNode(-1);
-        dummy.next = head;
-        ListNode cur = dummy;
-
-        while (cur.next != null) {
-            if (cur.next.val == val) {
-                cur.next = cur.next.next;
-            } else {
-                cur = cur.next;
-            }
+    public static ListNode rotateRight(ListNode head, int k) {
+        if(head == null || head.next == null || k == 0) {
+            return head;
         }
 
-        return dummy.next;
+        ListNode fast = head;
+        ListNode slow = head;
+        int length = 1;
+
+        while(fast.next != null) {
+            fast = fast.next;
+            length ++;
+        }
+
+        for(int i = 1; i < length - k%length; i++) {
+            slow = slow.next;
+        }
+
+        fast.next = head;
+        head = slow.next;
+        slow.next = null;
+
+        return head;
     }
     public static class ListNode{
       int val;
