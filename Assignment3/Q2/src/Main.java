@@ -5,7 +5,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	// Q2 Permutations
         int[] arr = {1,2,3};
         System.out.println(permute(arr));
     }
