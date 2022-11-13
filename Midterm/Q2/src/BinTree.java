@@ -5,26 +5,30 @@ public class BinTree <T> {
 
     }
 
-    public void populateNextLeft() {
+    public void populateParentNode() {
         if (root == null) {
             return;
         }
         dfs(root);
         return;
+
     }
-    public static void dfs(Node root) {
+
+    public void dfs(Node root) {
         if (root == null) {
             return;
         }
-
         Node left = root.left;
         Node right = root.right;
 
-        while(right != null) {
-            right.nextLeft = left;
-            right = right.left;
-            left = left.right;
+        if (left != null) {
+            left.parent = root;
         }
+
+        if (right != null) {
+            right.parent = root;
+        }
+
         dfs(root.left);
         dfs(root.right);
     }
