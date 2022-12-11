@@ -9,6 +9,7 @@ public class Main {
     }
 
     //Time Complexity: O(n*n);
+    //Space Complexity: O(n*n);
 
     public static int numberOfIslands(char[][] grid) {
         int count = 0;
