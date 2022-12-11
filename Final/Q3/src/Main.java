@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public class Main {
-
     public static void main(String[] args) {
         String str = "lee(t(c)o)de)";
         System.out.println(minRemoveToMakeValid(str));
     }
 
     // Time Complexity : O(n)
+
     public static String minRemoveToMakeValid(String s) {
         if (s == null || s.length() == 0) {
             return s;
@@ -37,11 +37,12 @@ public class Main {
         }
 
         StringBuilder sb = new StringBuilder();
-                for(int i = 0; i < s.length(); i++) {
+        for(int i = 0; i < s.length(); i++) {
             if(!indexesToRemove.contains(i)) {
                 sb.append(s.charAt(i));
             }
         }
-                return sb.toString();
+
+        return sb.toString();
     }
 }
