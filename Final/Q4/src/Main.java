@@ -5,7 +5,8 @@ public class Main {
         System.out.println(paths(obstacleGrid));
     }
 
-    //Time Complexity: O(n)
+    //Time Complexity: O(n*n)
+    //Space Complexity: O(n*n)
 
     public static int paths(int[][] obstacleGrid) {
         if (obstacleGrid == null || obstacleGrid.length == 0) {
