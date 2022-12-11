@@ -8,6 +8,7 @@ public class Main {
     }
 
     // Time Complexity: O(n)
+    // Space Complexity: O(n)
 
     public static List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> list = new ArrayList<>();
